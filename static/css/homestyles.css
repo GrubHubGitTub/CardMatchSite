@@ -1,0 +1,25 @@
+body {
+    background-color: #FFF8E5
+}
+
+.navbar {
+    background-color: #FFB344
+}
+
+
+h1 {
+    padding: 5% 5%
+}
+
+h4 {
+  padding: 0 5% 5% 5%
+}
+
+#gamestart {
+    background-color: #FFB319;
+   margin: 3% 25%
+}
+
+#homegif {
+    padding: 10% 10% 0 0
+}

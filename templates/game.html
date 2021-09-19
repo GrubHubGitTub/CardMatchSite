@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<!-- NAVBAR-->
+<section id="home">
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <a class="navbar-brand" href="">Concentration</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+            </li>
+        </ul>
+</nav>
+
+<!--CARDS-->
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        {% for key in cards: %}
+        {% if "url" in key: %}
+        <!-- Card -->
+        <input type="checkbox" id="card-{{key}}"/>
+        <label class="col-2 card-container" for='card-{{key}}'>
+            <div class="card-flip">
+                <!-- Card Front -->
+                <div class="card front">
+                    <img src="../static/images/{{ loop.index }}.png" class="card-img-top img-fluid">
+                </div>
+                <!-- End Card Front -->
+                <!-- Card Back -->
+                <div class="card back">
+                    <div class="card-block text-wrap text-center">
+                        <img src="{{cards[key]}}" class="img-fluid">
+                    </div>
+                </div>
+                <!-- End Card 2 Back -->
+            </div>
+        </label>
+        <!-- End Card -->
+        {% else: %}
+        <!-- Card -->
+        <input type="checkbox" id="card-{{key}}"/>
+        <label class="col-2 px-0 card-container" for='card-{{key}}'>
+            <div class="card-flip">
+                <!-- Card Front -->
+                <div class="card front">
+                    <img src="../static/images/{{ loop.index }}.png" class="card-img-top img-fluid" style="align:centre">
+                </div>
+                <!-- End Card Front -->
+                <!-- Card Back -->
+                <div class="card back">
+                    <div class="card-block text-wrap text-center">
+                        <h4>{{cards[key]}}</h4>
+                    </div>
+                </div>
+                <!-- End Card 2 Back -->
+            </div>
+        </label>
+        {% if cards|length == 8 and loop.index == 4: %}
+        <div class="row justify-content-center">
+            {% elif cards|length == 10 and loop.index == 5: %}
+            <div class="row justify-content-center">
+                <!-- End Card -->
+
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
+            </div>
+            </section>
+
+</body>
+</html>
