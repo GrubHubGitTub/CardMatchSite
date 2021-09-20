@@ -12,27 +12,22 @@ def form():
 def game():
     if request.method == "POST":
         cards = request.form["createcards"].splitlines()
-        print(cards)
         card_dic = {}
         count = 1
         for card in cards[0:12]:
-            print(card)
             if card == "":
                 pass
             else:
                 try:
                     r = requests.get(card)
-                    print(r.status_code)
                     if r.status_code == 200:
                         card_dic[f"url{count}"] = card
                 except Exception:
                     card_dic[str(count)] = card
                 count += 1
-        print(card_dic)
         l = list(card_dic.items())
         random.shuffle(l)
         shuffled_cards = dict(l)
-        print(shuffled_cards)
         return render_template("game.html", cards=shuffled_cards)
 
 if __name__ == "__main__":
