@@ -10,8 +10,8 @@
 <body>
 <!-- NAVBAR-->
 <section id="home">
-<nav class="navbar navbar-expand-sm navbar-dark">
-    <a class="navbar-brand" href="">Concentration</a>
+<nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand">Concentration</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,10 +19,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="">Create</a>
+                <a class="nav-link">Refresh to shuffle the cards again!</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Contact</a>
+                <a class="nav-link" href="/">Create new game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Contact</a>
             </li>
         </ul>
 </nav>
@@ -44,7 +47,7 @@
                 <!-- Card Back -->
                 <div class="card back">
                     <div class="card-block text-wrap text-center">
-                        <img src="{{cards[key]}}" class="img-fluid">
+                        <img src="{{cards[key]}}" class="img-fluid" alt="Invalid image, please check the URL!">
                     </div>
                 </div>
                 <!-- End Card 2 Back -->
