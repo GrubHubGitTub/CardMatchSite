@@ -15,7 +15,7 @@ body {
 }
 
 .container-fluid {
-    padding: 5% 10%
+    padding: 2%;
 }
 
 input[type='checkbox'] {
@@ -50,14 +50,10 @@ input[type='checkbox'] {
   transform: rotateY(-180deg);
 }
 
-
 input[type='checkbox']:checked + .card-container .card-flip {
   transform: rotateY(180deg);
 }
 
 h4 {
   text-align: center,
-}
-
-.row {
 }

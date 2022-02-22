@@ -12,6 +12,7 @@ def form():
 def game():
     if request.method == "POST":
         cards = request.form["createcards"].splitlines()
+
         card_dic = {}
         count = 1
         for card in cards[0:12]:
@@ -25,6 +26,7 @@ def game():
                 except Exception:
                     card_dic[str(count)] = card
                 count += 1
+
         l = list(card_dic.items())
         random.shuffle(l)
         shuffled_cards = dict(l)
